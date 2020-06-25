@@ -17,7 +17,7 @@ process.env.NODE_ENV = process.env.NODE_ENV || 'dev';
 
 let urlDB;
 
-const nube ="mongodb+srv://MiloMadden:cebollitasi77@cluster0-2ntwx.mongodb.net/megumi?retryWrites=true&w=majority";
+const nube = process.env.MONGO_URI;
 
 const local = 'mongodb://localhost:27017/megumi';
 
@@ -39,5 +39,11 @@ process.env.SEED_DESARROLLO = process.env.SEED_DESARROLLO || 'mr-peanutbutter';
 // VENCIMIENTO DEL TOKEN
 //=======================
 
-process.env.VENCIMIENTO_TOKEN = 60 * 60 * 24 * 30;
+process.env.VENCIMIENTO_TOKEN = '48h';
+
+//=======================
+// GOOGLE CLIENT
+//=======================
+
+process.env.CLIENT_ID = process.env.CLIENT_ID || process.env.GOOGLE_CLIENT;
 
